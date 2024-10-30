@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habilidades Comunicativas</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"> <!-- Fuente Poppins -->
+    <link rel="icon" href="img/ucv_logo.png" type="image/png"> <!-- Icono de la pestaña -->
 </head>
 <body>
     <!-- Banner -->
     <header class="banner">
-        <h1>Bienvenidos a Mi Página Web</h1>
+        <h1>Axel Gonzales Cataño</h1>
+        <h2 class="small-text">Enfermería | 1er Ciclo | UCV | 2024</h2>
     </header>
 
     <!-- Sección con foto y descripción alineadas -->
@@ -18,9 +21,12 @@
         
         <div class="description">
             <h2>Sobre mí</h2>
-            <p>descripcion aqui.</p>
+            <p>¡Hola! Soy Axel Gonzales, tengo 18 años, nací el 9 de octubre de 2006. Me gusta mucho dibujar (tanto tradicional como digital), escribir historias de todo tipo, aunque mi especialidad son las historias de fantasía/ficción y romance. También disfruto aprender a programar, componer canciones, ya sea de manera digital o tradicional, y jugar videojuegos a través de voice chat en Discord. Además, me encantan los animales, especialmente los gatos; en serio, no saben cuánto los adoro.</p>
         </div>
     </section>
+
+    <!-- Título de la galería -->
+    <h2 class="gallery-title">Pequeña Galería</h2>
 
     <!-- Nueva sección para la galería de imágenes -->
     <section class="gallery">
@@ -38,60 +44,20 @@
         <span class="indicator"></span>
         <span class="indicator"></span>
         <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
     </div>
 
-    <script>
-        const images = ["img/1.png", "img/2.png", "img/3.png", "img/4.png", "img/5.png"];
-        let currentIndex = 0;
+    <footer class="footer">
+        <p>&copy; 2024 Axel Gonzales Cataño. Todos los derechos reservados.</p>
+        <p>Contacto: axgonzalesca@ucvvirtual.edu.pe | Teléfono: +51 963 557 307</p>
+    </footer>
 
-        const galleryImage = document.getElementById('galleryImage');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const indicators = document.querySelectorAll('.indicator');
-
-        function updateImage() {
-            galleryImage.src = images[currentIndex];
-            updateIndicators();
-            resetImagePosition(); // Restablecer la posición de la imagen al actualizar
-        }
-
-        function updateIndicators() {
-            indicators.forEach((indicator, index) => {
-                indicator.classList.remove('active');
-                if (index === currentIndex) {
-                    indicator.classList.add('active');
-                }
-            });
-        }
-
-        function showNextImage() {
-            slideImage('left');
-            currentIndex = (currentIndex + 1) % images.length;
-            setTimeout(updateImage, 300); // Tiempo de espera para la animación
-        }
-
-        function showPrevImage() {
-            slideImage('right');
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            setTimeout(updateImage, 300); // Tiempo de espera para la animación
-        }
-
-        function slideImage(direction) {
-            if (direction === 'left') {
-                galleryImage.classList.add('slide-left');
-            } else {
-                galleryImage.classList.add('slide-right');
-            }
-        }
-
-        function resetImagePosition() {
-            galleryImage.classList.remove('slide-left', 'slide-right'); // Resetear la clase de animación
-        }
-
-        nextBtn.addEventListener('click', showNextImage);
-        prevBtn.addEventListener('click', showPrevImage);
-
-        setInterval(showNextImage, 3000); // Cambiar imagen cada 3 segundos
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

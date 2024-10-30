@@ -1,6 +1,6 @@
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Cambiar a la fuente Poppins */
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,7 +17,14 @@ body {
     color: #f0f0f0;
     text-align: center;
     padding: 40px 0;
-    font-size: 2em;
+    font-size: 2.5em; /* Aumentar tamaño del texto del banner */
+}
+
+/* Estilo del texto pequeño */
+.small-text {
+    font-size: 0.8em; /* Tamaño más pequeño */
+    font-weight: normal; /* Sin negrita */
+    margin-top: 10px; /* Espacio entre los textos */
 }
 
 /* Sección de información con flexbox */
@@ -30,28 +37,35 @@ body {
 
 /* Imagen más grande y alineada a la izquierda */
 .foto {
-    width: 200px; /* Tamaño más grande */
-    height: auto;
-    object-fit: contain;
-    margin-right: 40px; /* Aumentado para más espacio */
+    width: 250px; /* Aumentar tamaño de la foto */
+    height: auto; /* Mantener proporción */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    margin-right: 40px; /* Espacio a la derecha */
 }
 
 /* Descripción */
 .description {
     max-width: 600px;
     text-align: left;
+    font-size: 1.2em; /* Aumentar tamaño de fuente de la descripción */
 }
 
 .description h2 {
     color: #ff69b4; /* Rosa brillante */
-    font-size: 1.8em;
+    font-size: 2em; /* Aumentar tamaño del encabezado */
     margin-top: 0;
 }
 
 .description p {
     color: #d3d3d3;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Mantener tamaño de texto del párrafo */
     line-height: 1.6;
+}
+
+/* Título de la galería */
+.gallery-title {
+    font-size: 1.8em; /* Tamaño más grande para el título de la galería */
+    margin: 20px 0; /* Espacio alrededor del título */
 }
 
 /* Nueva sección para la galería de imágenes */
@@ -62,7 +76,7 @@ body {
 }
 
 .image-container {
-    width: 500px; /* Tamaño fijo más grande */
+    width: 600px; /* Tamaño fijo más grande */
     height: 400px; /* Tamaño fijo más grande */
     overflow: hidden; /* Oculta el exceso */
     display: flex;
@@ -133,4 +147,15 @@ body {
 .indicator.active {
     background-color: #ff69b4; /* Color del puntito activo */
     transform: scale(1.2); /* Tamaño un poco más grande para el puntito activo */
+}
+
+/* Estilo del footer */
+.footer {
+    background-color: #333;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
