@@ -173,11 +173,50 @@ body {
     max-width: 60%; /* Limitar el ancho de la respuesta */
 }
 
+/* Sección de vista previa del documento */
+.document-preview {
+    display: flex; /* Utiliza flexbox para centrar los elementos */
+    flex-direction: row; /* Alinear en fila */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: flex-start; /* Alinear al inicio en la dirección transversal */
+    margin: 40px 0; /* Espacio vertical alrededor */
+    width: 100%; /* Asegurar que ocupe el ancho completo */
+}
+
+/* Vista previa individual */
+/* Vista previa individual */
+.document-preview-item {
+    width: 40%; /* Ancho ajustado para que no ocupen tanto espacio */
+    text-align: center; /* Centrar texto dentro del contenedor */
+    margin: 0 15px; /* Aumenta el margen horizontal para que queden más cerca pero no pegadas */
+}
+
+.document-preview-item iframe {
+    height: 700px; /* Mantener la altura para estirar más las vistas previas */
+    width: 100%; /* Mantiene el ancho completo del contenedor */
+}
+
 /* Estilo del texto expositivo con subrayado rosa */
 .text-expositivo {
     text-decoration: underline; /* Añadir subrayado */
     text-decoration-color: #ff69b4; /* Color rosa para el subrayado */
     text-underline-offset: 3px; /* Espacio entre el texto y el subrayado */
+    margin: 20px 0; /* Espacio alrededor del texto */
+}
+
+.download-link {
+    margin-top: 10px; /* Espacio entre el iframe y el texto de descarga */
+    font-size: 1em; /* Tamaño del texto */
+    color: #ff69b4; /* Color rosa para el texto */
+}
+
+.download-link a {
+    text-decoration: none; /* Sin subrayado en el enlace */
+    color: #ff69b4; /* Color rosa para el enlace */
+}
+
+.download-link a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
 }
 
 /* Estilo del footer */
