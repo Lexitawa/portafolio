@@ -1,0 +1,136 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+}
+
+/* Estilo del banner */
+.banner {
+    width: 100%;
+    background-color: #333;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2em;
+}
+
+/* Sección de información con flexbox */
+.info {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px;
+}
+
+/* Imagen más grande y alineada a la izquierda */
+.foto {
+    width: 200px; /* Tamaño más grande */
+    height: auto;
+    object-fit: contain;
+    margin-right: 40px; /* Aumentado para más espacio */
+}
+
+/* Descripción */
+.description {
+    max-width: 600px;
+    text-align: left;
+}
+
+.description h2 {
+    color: #ff69b4; /* Rosa brillante */
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.description p {
+    color: #d3d3d3;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Nueva sección para la galería de imágenes */
+.gallery {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.image-container {
+    width: 500px; /* Tamaño fijo más grande */
+    height: 400px; /* Tamaño fijo más grande */
+    overflow: hidden; /* Oculta el exceso */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222; /* Fondo más oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    position: relative; /* Para posicionar la imagen */
+}
+
+.gallery-image {
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+    max-height: 100%; /* Asegura que la imagen no exceda el contenedor */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    transition: transform 0.3s ease-in-out; /* Transición para el efecto de deslizamiento */
+    position: absolute; /* Para posicionar la imagen */
+}
+
+/* Animaciones de deslizamiento */
+.slide-left {
+    animation: slideLeft 0.3s forwards;
+}
+
+.slide-right {
+    animation: slideRight 0.3s forwards;
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+.nav-button {
+    background-color: #333;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+.nav-button:hover {
+    background-color: #444;
+}
+
+/* Estilos para los indicadores de imagen */
+.image-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 10px; /* Tamaño de los puntitos */
+    height: 10px; /* Tamaño de los puntitos */
+    border-radius: 50%; /* Forma circular */
+    background-color: #555; /* Color de los puntitos */
+    margin: 0 5px; /* Espacio entre los puntitos */
+    transition: transform 0.2s; /* Transición suave al cambiar */
+}
+
+.indicator.active {
+    background-color: #ff69b4; /* Color del puntito activo */
+    transform: scale(1.2); /* Tamaño un poco más grande para el puntito activo */
+}

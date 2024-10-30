@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades Comunicativas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Banner -->
+    <header class="banner">
+        <h1>Bienvenidos a Mi Página Web</h1>
+    </header>
+
+    <!-- Sección con foto y descripción alineadas -->
+    <section class="info">
+        <img src="img/yo.png" alt="Mi Foto" class="foto">
+        
+        <div class="description">
+            <h2>Sobre mí</h2>
+            <p>Hola, soy [Tu Nombre], un apasionado de [tu pasión o área de interés]. Me dedico a [tu ocupación o actividad principal] y en mi tiempo libre disfruto de [otras actividades o pasatiempos]. Soy alguien [describe tus cualidades o valores].</p>
+        </div>
+    </section>
+
+    <!-- Nueva sección para la galería de imágenes -->
+    <section class="gallery">
+        <button id="prevBtn" class="nav-button">◀</button>
+        <div class="image-container">
+            <img id="galleryImage" src="img/1.png" alt="Galería de Imágenes" class="gallery-image">
+        </div>
+        <button id="nextBtn" class="nav-button">▶</button>
+    </section>
+
+    <!-- Indicadores de imagen -->
+    <div class="image-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+    </div>
+
+    <script>
+        const images = ["img/1.png", "img/2.png", "img/3.png", "img/4.png", "img/5.png"];
+        let currentIndex = 0;
+
+        const galleryImage = document.getElementById('galleryImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function updateImage() {
+            galleryImage.src = images[currentIndex];
+            updateIndicators();
+            resetImagePosition(); // Restablecer la posición de la imagen al actualizar
+        }
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.remove('active');
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                }
+            });
+        }
+
+        function showNextImage() {
+            slideImage('left');
+            currentIndex = (currentIndex + 1) % images.length;
+            setTimeout(updateImage, 300); // Tiempo de espera para la animación
+        }
+
+        function showPrevImage() {
+            slideImage('right');
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            setTimeout(updateImage, 300); // Tiempo de espera para la animación
+        }
+
+        function slideImage(direction) {
+            if (direction === 'left') {
+                galleryImage.classList.add('slide-left');
+            } else {
+                galleryImage.classList.add('slide-right');
+            }
+        }
+
+        function resetImagePosition() {
+            galleryImage.classList.remove('slide-left', 'slide-right'); // Resetear la clase de animación
+        }
+
+        nextBtn.addEventListener('click', showNextImage);
+        prevBtn.addEventListener('click', showPrevImage);
+
+        setInterval(showNextImage, 3000); // Cambiar imagen cada 3 segundos
+    </script>
+</body>
+</html>
