@@ -31,23 +31,22 @@ body {
 .info {
     display: flex;
     align-items: center;
-    max-width: 800px;
+    max-width: 800px; /* Mantiene el ancho máximo */
     margin: 20px;
 }
 
 /* Imagen más grande y alineada a la izquierda */
 .foto {
-    width: 250px; /* Aumentar tamaño de la foto */
-    height: auto; /* Mantener proporción */
+    width: 250px; /* Tamaño de la foto */
+    height: auto; /* Mantiene proporción */
     object-fit: contain; /* Mantiene la proporción de la imagen */
-    margin-right: 40px; /* Espacio a la derecha */
+    margin-right: 20px; /* Reducir espacio a la derecha */
 }
 
 /* Descripción */
 .description {
-    max-width: 600px;
+    max-width: 400px; /* Establecer ancho máximo para compactar el texto */
     text-align: left;
-    font-size: 1.2em; /* Aumentar tamaño de fuente de la descripción */
 }
 
 .description h2 {
@@ -147,6 +146,38 @@ body {
 .indicator.active {
     background-color: #ff69b4; /* Color del puntito activo */
     transform: scale(1.2); /* Tamaño un poco más grande para el puntito activo */
+}
+
+/* Sección de decisión de enfermería */
+.nursing-decision {
+    display: flex;
+    flex-direction: row; /* Alinear elementos en fila */
+    justify-content: flex-start; /* Alinear a la izquierda */
+    margin: 40px 80px; /* Espacio vertical y márgenes laterales aumentados */
+    width: calc(100% - 470px); /* Ancho total menos márgenes laterales */
+}
+
+.nursing-question {
+    color: #ff69b4; /* Color rosa */
+    font-weight: bold; /* Negrita */
+    font-size: 2.5em; /* Tamaño más grande para la pregunta */
+    text-align: left; /* Alinear a la izquierda */
+    margin-right: 20px; /* Espacio a la derecha de la pregunta */
+}
+
+.nursing-answer {
+    text-align: left; /* Alinear a la izquierda */
+    font-size: 1.1em; /* Tamaño del texto de respuesta */
+    color: #d3d3d3; /* Color gris claro */
+    line-height: 1.6; /* Aumentar el espacio entre líneas */
+    max-width: 60%; /* Limitar el ancho de la respuesta */
+}
+
+/* Estilo del texto expositivo con subrayado rosa */
+.text-expositivo {
+    text-decoration: underline; /* Añadir subrayado */
+    text-decoration-color: #ff69b4; /* Color rosa para el subrayado */
+    text-underline-offset: 3px; /* Espacio entre el texto y el subrayado */
 }
 
 /* Estilo del footer */
